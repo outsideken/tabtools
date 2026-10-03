@@ -10,6 +10,10 @@ viztools.
 ## [Unreleased]
 
 ### Changed
+- The version is typed in one place, ``tabtools/_version.py``.
+  ``pyproject.toml`` reads it (``dynamic = ["version"]``), the README's
+  hand-typed version and test-count badges are replaced by the CI badge, and
+  the version test checks the single source instead of a literal (#2).
 - Published to GitHub (outsideken/tabtools); README installs from GitHub instead of
   local editable paths
 - Author metadata set to OutsideKen; added ``LICENSE`` (MIT, as already declared)
