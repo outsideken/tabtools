@@ -4,7 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tabtools"
-version = "0.1.1"
+# The version lives only in tabtools/_version.py (read below).
+dynamic = ["version"]
 description = "Tabular profiling and anomaly scoring for the JEMA toolkit"
 license = { text = "MIT" }
 authors = [{ name = "OutsideKen" }]
@@ -26,6 +27,9 @@ dependencies = [
     "pandas",
     "wherewhen>=0.2.0",
 ]
+
+[tool.setuptools.dynamic]
+version = { attr = "tabtools._version.__version__" }
 
 [tool.setuptools.packages.find]
 where   = ["."]

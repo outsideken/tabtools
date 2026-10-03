@@ -1,13 +1,13 @@
 # tabtools
 
-![Version](https://img.shields.io/badge/version-0.1.1-blue)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Tests](https://img.shields.io/badge/tests-19%20passing-brightgreen)
+![CI](https://github.com/outsideken/tabtools/actions/workflows/ci.yml/badge.svg)
 
 Tabular profiling and anomaly scoring for the JEMA toolkit.  Versions
 independently of jematools, wherewhen, h3tools, and viztools.  See
-[CHANGELOG.md](CHANGELOG.md).
+[CHANGELOG.md](CHANGELOG.md).  The version is `tabtools.__version__`, set only
+in `tabtools/_version.py`.
 
 Import directly — not re-exported through jematools or h3tools.
 
