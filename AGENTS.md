@@ -31,8 +31,11 @@ no `X | Y` unions); add its runtime-rules test at that point.
 - Depends on `wherewhen` (installed from GitHub). Pair with
   `viztools.palettes.ANOMALY_PALETTE` for colours, but don't add viztools as a
   dependency.
-- Releases: bump `tabtools/_version.py` and `pyproject.toml` together, update
-  `tests/test_package.py`'s version check, `CHANGELOG.md`, and the README badges.
+- Releases: bump `tabtools/_version.py`, the only place the version is typed
+  (`pyproject.toml` reads it; `tests/test_package.py` checks that `[project]`
+  types no version), and move `[Unreleased]` in `CHANGELOG.md` to the new
+  version. After merge, tag `tabtools-vX.Y.Z` and update the toolkit matrix in
+  outsideken/geo-toolkit.
 
 ## Testing
 
