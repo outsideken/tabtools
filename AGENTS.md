@@ -21,13 +21,18 @@ no `X | Y` unions); add its runtime-rules test at that point.
 
 - `tabtools/` — the package: `profile.py`, `anomaly.py`, `_messages.py` (re-exports
   `wherewhen._messages`), `_version.py`.
-- `tests/` — pytest suite. CI (`.github/workflows/ci.yml`) runs it on Python 3.12 and
-  3.9.
+- `tests/` — pytest suite. CI (`.github/workflows/ci.yml`) runs it on `ubuntu-24.04`
+  in two jobs, each on Python 3.12 and 3.9: `test` against wherewhen `main`, and
+  `test (declared wherewhen floor)` against the release tag of the `wherewhen>=`
+  floor in `pyproject.toml` (#5, #7).
 - `CHANGELOG.md` — record every user-visible change under `[Unreleased]`.
 
 ## Rules
 
-- Keep `requires-python >=3.9` true; the 3.9 CI job checks it.
+- Keep `requires-python >=3.9` true; the 3.9 CI jobs check it.
+- Declare only a released wherewhen version as the floor (`wherewhen>=X.Y.Z` with a
+  `wherewhen-vX.Y.Z` tag). The floor job installs that tag and fails if there is none.
+  Raise the floor when the code needs something newer, in the same PR.
 - Depends on `wherewhen` (installed from GitHub). Pair with
   `viztools.palettes.ANOMALY_PALETTE` for colours, but don't add viztools as a
   dependency.
