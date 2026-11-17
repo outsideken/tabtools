@@ -9,7 +9,7 @@ Import directly::
     from tabtools.anomaly import anomaly_score, flag_outliers, anomaly_summary
 
 Compose with ``viztools.palettes.ANOMALY_PALETTE`` for diverging anomaly
-maps and charts.  Depends on ``wherewhen>=0.2.0`` for notification style.
+maps and charts.  Depends on ``wherewhen>=0.2.8`` for notification style.
 
 On first import prints ``ℹ️ [tabtools] v<version> loaded.``
 """

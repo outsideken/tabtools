@@ -10,6 +10,14 @@ viztools.
 ## [Unreleased]
 
 ### Changed
+- **Requires ``wherewhen>=0.2.8``** (was ``>=0.2.0``) (#5). There is no
+  ``wherewhen-v0.2.0`` tag, so the old floor could not be installed or tested;
+  0.2.8 is the oldest release, and the suite passes on 0.2.8, 0.2.9 and 0.2.10.
+- CI tests the declared wherewhen floor: a new job installs that release tag on
+  Python 3.9 and 3.12, checks that is what got installed, and runs the suite.
+  The other job installs wherewhen ``main``, so a floor that was too low passed
+  there. A floor with no release tag now fails CI.
+- CI runs on ``ubuntu-24.04``: ``ubuntu-latest`` (26.04) has no Python 3.9.
 - The version is typed in one place, ``tabtools/_version.py``.
   ``pyproject.toml`` reads it (``dynamic = ["version"]``), the README's
   hand-typed version and test-count badges are replaced by the CI badge, and
